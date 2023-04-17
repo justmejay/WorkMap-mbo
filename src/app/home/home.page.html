@@ -1,0 +1,35 @@
+<ion-content>
+<ion-grid>
+    <ion-row>
+      <ion-col offset=4 size=4>
+        <div style="position: relative">
+          <ion-searchbar debounce=500 (ionChange)="search($event)" ></ion-searchbar>
+          <ion-button (click)="getloc()">Get my current Location</ion-button>
+          <!-- <ion-searchbar debounce=500  [value]="selectedAddress"></ion-searchbar>
+            <ion-button (click)="search($event)">Search</ion-button> -->
+          <div style="position: absolute; width: 100%; z-index: 999;">
+            <ion-list lines="none" *ngIf="addresses.length > 0">
+              <ion-item button *ngFor="let address of addresses" (click)="onSelect(address)">
+                <ion-icon name="pin"></ion-icon>
+                {{ address.description }}
+              </ion-item>
+            </ion-list>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+<ion-list>
+  <ion-item>
+    <ion-label>Selected Address:</ion-label>
+    <ion-input [value]="selectedAddress" placeholder="Some Address"></ion-input>
+  </ion-item>
+</ion-list>
+
+  <capacitor-google-map #map></capacitor-google-map>
+
+
+
+
+
+</ion-content>

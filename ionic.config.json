@@ -1,0 +1,7 @@
+{
+  "name": "WorkMap",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
